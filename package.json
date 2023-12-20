@@ -1,0 +1,23 @@
+{
+  "name": "dynamic-sql",
+  "version": "0.0.0",
+  "description": "Package to generate dynamic javascript objects based on queries stored in sql files",
+  "main": "index.js",
+  "scripts": {
+    "add-queries": "node src/index.js"
+  },
+  "keywords": [
+    "node",
+    "sql"
+  ],
+  "author": "Austin Brage",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agusb19/dynamic-sql"
+  },
+  "bugs": {
+    "url": "https://github.com/agusb19/dynamic-sql/issues"
+  },
+  "homepage": "https://github.com/agusb19/dynamic-sql/blob/main/README.md"
+}
