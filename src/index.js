@@ -1,6 +1,7 @@
-const processSQLFile = require('./utils/processSQL');
 const { join, extname, basename } = require('path');
 const { readdirSync, writeFileSync, mkdirSync } = require('fs');
+const processSQLFile = require('./utils/processSQL');
+const generateTypeDefinition = require('./utils/generateCode');
 
 // Initialize paths references from current working directory
 const currentDir = process.cwd();
@@ -37,8 +38,8 @@ function generateQueries() {
         const typeDefinition = generateTypeDefinition(tableName, fileData);
     
         writeFileSync(outputFileName, typeDefinition, 'utf-8');
-        console.log('Queries added successfully')
+        console.log('Queries added successfully');
     }
 }
 
-generateQueries()
+generateQueries();
