@@ -4,7 +4,8 @@
   "description": "Package to generate dynamic javascript objects based on queries stored in sql files",
   "main": "index.js",
   "scripts": {
-    "add-queries": "node src/index.js"
+    "add-queries": "node src/index.js",
+    "add-queries:ts": "node src/index_types.js"
   },
   "keywords": [
     "node",
