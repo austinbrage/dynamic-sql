@@ -6,7 +6,7 @@ const { readdirSync, writeFileSync, mkdirSync } = require('fs');
 const currentDir = process.cwd();
 const sourceDir = join(currentDir, 'src');
 const sqlFolderDir = join(sourceDir, 'sql');
-const outputFolderDir = join(sqlFolderDir, 'queries');
+const outputFolderDir = join(sourceDir, 'queries');
 
 function generateQueries() {
     
