@@ -1,7 +1,7 @@
 const { join, extname, basename } = require('path');
-const { readdirSync, writeFileSync, mkdirSync } = require('fs');
 const processSQLFile = require('./utils/processSQL');
 const generateTypeDefinition = require('./utils/generateCode');
+const { readdirSync, writeFileSync, mkdirSync, existsSync } = require('fs');
 
 // Initialize paths references from current working directory
 const currentDir = process.cwd();
