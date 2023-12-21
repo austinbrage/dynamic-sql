@@ -11,7 +11,7 @@ const outputFolderDir = join(sourceDir, 'queries');
 
 function generateQueries() {
     
-    const sqlFiles = readdirSync(sqlDir).filter((fileName) => fileName.endsWith('.sql'));
+    const sqlFiles = readdirSync(sqlFolderDir).filter((fileName) => fileName.endsWith('.sql'));
     
     if(!existsSync(sourceDir)) {
         return console.log('Could not find "src" folder, please add it to your project')
