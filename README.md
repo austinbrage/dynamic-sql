@@ -39,7 +39,7 @@
 ```
 - ***Execute the script added to the package-json***
 
-> **When executing add-queries it will create a JS file inside a queries folder**
+> **When executing "add-queries" it will create a JS file inside a queries folder**
 ```js
     export const sectionsQueries = {
       "addNew": "INSERT INTO `sections` (`article_id`, `content`, `image_url`) VALUES (?, ?, ?, ?); ",
@@ -47,7 +47,7 @@
     };
 ```
 
-> **When executing add-queries it will create a TS file inside a queries folder**
+> **When executing "add-queries:ts" it will create a TS file instead with the corresponding types inside a queries folder**
 ```ts
     export interface sectionsInterface {
       addNew: string
