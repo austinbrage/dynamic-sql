@@ -1,6 +1,6 @@
 {
   "name": "dynamic-sql",
-  "version": "0.1.4",
+  "version": "0.2.4",
   "description": "Package to generate dynamic javascript objects based on queries stored in sql files",
   "main": "index.js",
   "bin": {
