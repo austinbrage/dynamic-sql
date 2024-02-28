@@ -3,61 +3,70 @@
 
 #### **Node package created for the development process when working with SQL Databases inside node applications**
 
-## **1. Instalation**
+## **1. Instalation and usage**
 
 - ***Install the package as a development dependency***
 ```bash
     npm install -D dynamic-sql@latest
 ```
-
-## **2. Setup**
-
-- ***Add the scripts to generate the JS objects with the SQL queries***
-```js
-    "scripts": {
-        "add-queries": "node node_modules/dynamic-sql/src/index",
-        "add-queries:ts": "node node_modules/dynamic-sql/src/index_types"
-    },
+  > **Then you generate the JAVASCRIPT queries with the command**
+  > ```bash
+  >     npx add-queries
+  > ```
+  > **Or you generate the TYPESCRIPT queries with the command**
+  > ```bash
+  >     npx add-queries-ts
+  > ```
+- ***Also you can install the package globaly***
+```bash
+    npm install -g dynamic-sql@latest
 ```
+  > **So you can use the same commands without npx for a faster response**
+  > ```bash
+  >     add-queries
+  > ```
+  > ```bash
+  >     add-queries-ts
+  > ```
 
-## **3. How do I use it?**
+## **2. How do I use it?**
 
 - ***Add the sql files inside ./src/sql directory***
 
-> **The title of the query MUST be commented above the query**
-> 
-> **Between each query MUST be blank space, even after the last query**
-```sql
-    -- addNew
-        INSERT INTO `sections` (`article_id`, `content`, `image_url`)
-        VALUES (?, ?, ?, ?);
-    
-    -- remove
-        DELETE FROM `sections`
-        WHERE `id` = ?;
-    
-```
-- ***Execute the script added to the package-json***
+  > **The title of the query MUST be commented above the query**
+  > 
+  > **Between each query MUST be blank space, even after the last query**
+  > ```sql
+  >     -- addNew
+  >         INSERT INTO `sections` (`article_id`, `content`, `image_url`)
+  >         VALUES (?, ?, ?, ?);
+  >     
+  >     -- remove
+  >         DELETE FROM `sections`
+  >         WHERE `id` = ?;
+  >     
+  > ```
+- ***Execute the commands mentioned above***
 
-> **When executing "add-queries" it will create a JS file inside a queries folder**
-```js
-    export const sectionsQueries = {
-      "addNew": "INSERT INTO `sections` (`article_id`, `content`, `image_url`) VALUES (?, ?, ?, ?); ",
-      "remove": "DELETE FROM `sections` WHERE `id` = ?; "
-    };
-```
+  > **When executing "add-queries" it will create a JS file inside a queries folder**
+  > ```js
+  >     export const sectionsQueries = {
+  >       "addNew": "INSERT INTO `sections` (`article_id`, `content`, `image_url`) VALUES (?, ?, ?, ?); ",
+  >       "remove": "DELETE FROM `sections` WHERE `id` = ?; "
+  >     };
+  > ```
 
-> **When executing "add-queries:ts" it will create a TS file instead with the corresponding types inside a queries folder**
-```ts
-    export interface sectionsInterface {
-      addNew: string
-      remove: string
-    }
-    export const sectionsQueries: sectionsInterface = {
-      "addNew": "INSERT INTO `sections` (`article_id`, `content`, `image_url`) VALUES (?, ?, ?, ?); ",
-      "remove": "DELETE FROM `sections` WHERE `id` = ?; "
-    };
-```
+  > **When executing "add-queries-ts" it will create a TS file instead with the corresponding types inside a queries folder**
+  > ```ts
+  >     export interface sectionsInterface {
+  >       addNew: string
+  >       remove: string
+  >     }
+  >     export const sectionsQueries: sectionsInterface = {
+  >       "addNew": "INSERT INTO `sections` (`article_id`, `content`, `image_url`) VALUES (?, ?, ?, ?); ",
+  >       "remove": "DELETE FROM `sections` WHERE `id` = ?; "
+  >     };
+  > ```
 
 ## **3. Why should I use it?**
 
