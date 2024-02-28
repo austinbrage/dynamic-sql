@@ -5,11 +5,13 @@
   "main": "index.js",
   "bin": {
     "add-queries": "./src/index.js",
-    "add-queries-ts": "./src/index_types.js"
+    "add-queries-ts": "./src/index_types.js",
+    "add-queries-brage": "./src/index_brage.js"
   },
   "scripts": {
     "add-queries": "node src/index.js",
     "add-queries:ts": "node src/index_types.js",
+    "add-queries:brage": "node src/index_brage.js",
     "postinstall": "node -e \"if (process.platform !== 'win32') { require('child_process').execSync('chmod +x node_modules/.bin/mi-ejecutable'); }\""
   },
   "keywords": [
