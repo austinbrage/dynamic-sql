@@ -17,6 +17,10 @@
   > ```bash
   >     npx add-queries-ts
   > ```
+  > **Or you generate the TYPESCRIPT queries on all sql folders with the command**
+  > ```bash
+  >     npx add-queries-brage
+  > ```
 - ***Also you can install the package globaly***
 ```bash
     npm install -g dynamic-sql@latest
@@ -27,6 +31,9 @@
   > ```
   > ```bash
   >     add-queries-ts
+  > ```
+  > ```bash
+  >     add-queries-brage
   > ```
 
 ## **2. How do I use it?**
@@ -67,6 +74,10 @@
   >       "remove": "DELETE FROM `sections` WHERE `id` = ?; "
   >     };
   > ```
+  
+- ***Another option is using the brage mode***
+
+  > **When executing "add-queries-brage" it will create a TS file inside every SQL folder that has .sql files on it**
 
 ## **3. Why should I use it?**
 
