@@ -10,9 +10,7 @@ const sqlFolderDir = join(sourceDir, 'sql');
 const outputFolderDir = join(sourceDir, 'queries');
 
 function generateQueries() {
-    
-    const sqlFiles = readdirSync(sqlFolderDir).filter((fileName) => fileName.endsWith('.sql'));
-    
+        
     if(!existsSync(sourceDir)) {
         return console.log('Could not find "src" folder, please add it to your project')
     }
@@ -21,12 +19,14 @@ function generateQueries() {
         return console.log('Could not find "sql" folder inside the "src" folder, please add it to your project')
     }
 
-    if(sqlFiles.length === 0) {
-        return console.log('Could not find ".sql" files inside the "./src/sql" directory, please add them to your project')
-    }
-
     if (!readdirSync(sourceDir).includes('queries')) {
         mkdirSync(outputFolderDir);
+    }
+
+    const sqlFiles = readdirSync(sqlFolderDir).filter((fileName) => fileName.endsWith('.sql'));
+
+    if(sqlFiles.length === 0) {
+        return console.log('Could not find ".sql" files inside the "./src/sql" directory, please add them to your project')
     }
 
     for (const fileName of sqlFiles) {
