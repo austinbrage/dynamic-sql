@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { join, extname, basename } = require('path');
 const processSQLFile = require('./utils/processSQL');
 const generateTypeDefinition = require('./utils/generateCode');
