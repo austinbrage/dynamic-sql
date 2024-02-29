@@ -24,7 +24,7 @@ function findSQLFolders(baseDir, folders = []) {
 
     for (const entry of entries) {
         const entryPath = join(baseDir, entry);
-        if (isDirectory(entryPath)) {
+        if (entry !== 'node_modules' && isDirectory(entryPath)) {
             findSQLFolders(entryPath, folders);
         }
     }
